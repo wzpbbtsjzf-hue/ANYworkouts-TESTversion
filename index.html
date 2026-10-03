@@ -31,33 +31,56 @@
 <script>
 const workouts={
  A:{name:'Full Body A',ex:[
-   ['DB goblet squat — comfortable depth',2,'8–10',90,2.5,['Quads','Glutes','Core','Hold one dumbbell at your chest. Sit down and back to a comfortable depth, keeping your knees tracking comfortably over your feet, then stand tall.]],
-   ['DB Romanian deadlift',2,'8–10',90,2,['Hamstrings','Glutes','Back','Hold dumbbells by your thighs. Hinge your hips back with a soft knee bend, keep your back neutral, lower until you feel your hamstrings load, then drive your hips forward.]],
-   ['DB bench press',3,'8–12',90,2,['Chest','Triceps','Shoulders','Lie on the bench with dumbbells over your chest. Lower with control toward your chest, then press back up without letting your shoulders shrug.]],
-   ['1-arm DB row, bench-supported / side',3,'10–12',60,2,['Back','Biceps','Support one hand and knee or hand on the bench. Pull the dumbbell toward your hip while keeping your torso stable, then lower with control.]],
-   ['DB hip thrust on bench',2,'8–12',90,2,['Glutes','Hamstrings','Upper back rests on the bench and feet stay planted. Drive through your feet to lift your hips, squeeze your glutes at the top, then lower under control.]],
-   ['DB lateral raise',2,'12–15',45,1.5,['Shoulders','With light dumbbells at your sides, raise your arms out to roughly shoulder height with a soft elbow bend, then lower slowly.]],
+   ['DB goblet squat — comfortable depth',2,'8–10',90,2.5,['Quads','Glutes','Core']],
+   ['DB Romanian deadlift',2,'8–10',90,2,['Hamstrings','Glutes','Back']],
+   ['DB bench press',3,'8–12',90,2,['Chest','Triceps','Shoulders']],
+   ['1-arm DB row, bench-supported / side',3,'10–12',60,2,['Back','Biceps']],
+   ['DB hip thrust on bench',2,'8–12',90,2,['Glutes','Hamstrings']],
+   ['DB lateral raise',2,'12–15',45,1.5,['Shoulders']],
    ['Dead bug / side',2,'8–10',45,3,['Core']]
  ]},
  B:{name:'Full Body B',ex:[
    ['DB Romanian deadlift',3,'8–10',90,2,['Hamstrings','Glutes','Back']],
-   ['Low step-up / side*',2,'8–10',60,2.5,['Glutes','Quads','Step onto a low, stable step and drive through the working foot to stand. Lower slowly and stay controlled; use a pain-free squat variation if this bothers your knee.]],
-   ['Seated DB shoulder press',3,'8–12',75,2,['Shoulders','Triceps','Sit tall with dumbbells at shoulder height. Press overhead while keeping your ribs controlled, then lower slowly.]],
-   ['Chest-supported DB row',3,'10–12',75,2,['Back','Biceps','Lie chest-down on an inclined bench with dumbbells hanging down. Pull toward your ribs/hips while keeping your chest supported, then lower slowly.]],
-   ['DB glute bridge',2,'10–15',60,2,['Glutes','Hamstrings','Lie on your back with feet planted and the dumbbell resting securely over your hips. Lift your hips by squeezing your glutes, pause briefly, then lower.]],
-   ['DB biceps curl',2,'10–15',45,1.5,['Biceps','Keep elbows close to your sides. Curl the dumbbells toward your shoulders without swinging, then lower slowly.]],
+   ['Low step-up / side*',2,'8–10',60,2.5,['Glutes','Quads']],
+   ['Seated DB shoulder press',3,'8–12',75,2,['Shoulders','Triceps']],
+   ['Chest-supported DB row',3,'10–12',75,2,['Back','Biceps']],
+   ['DB glute bridge',2,'10–15',60,2,['Glutes','Hamstrings']],
+   ['DB biceps curl',2,'10–15',45,1.5,['Biceps']],
    ['Side plank / side',2,'20–30 sec',45,3,['Core']]
  ]},
  C:{name:'Full Body C',ex:[
-   ['DB squat — comfortable depth',2,'8–12',90,2,['Quads','Glutes','Hold dumbbells securely and squat to a comfortable, pain-free depth. Keep your torso controlled and knees tracking comfortably over your feet.]],
-   ['Single-leg DB RDL / side',2,'8–10',60,2,['Hamstrings','Glutes','Core','Balance on one leg while hinging your hips back and reaching the other leg behind you. Keep your hips square and return to standing with control.]],
-   ['Incline DB bench press',3,'8–12',75,2,['Chest','Shoulders','Triceps','Lie on an inclined bench with dumbbells over your chest. Lower with control, then press up while keeping your shoulders stable.]],
-   ['DB pullover',3,'10–12',75,2,['Back','Chest','Lie on the bench holding one dumbbell over your chest. With slightly bent elbows, lower it behind your head only as far as comfortable, then bring it back over your chest.]],
+   ['DB squat — comfortable depth',2,'8–12',90,2,['Quads','Glutes']],
+   ['Single-leg DB RDL / side',2,'8–10',60,2,['Hamstrings','Glutes','Core']],
+   ['Incline DB bench press',3,'8–12',75,2,['Chest','Shoulders','Triceps']],
+   ['DB pullover',3,'10–12',75,2,['Back','Chest']],
    ['DB lateral raise',2,'12–15',45,1.5,['Shoulders']],
    ['DB biceps curl',2,'10–15',45,1.5,['Biceps']],
-   ['DB overhead triceps extension',2,'10–15',45,1.5,['Triceps','Hold one dumbbell overhead with both hands. Bend your elbows to lower it behind your head, then extend your elbows to return it overhead.]],
+   ['DB overhead triceps extension',2,'10–15',45,1.5,['Triceps']],
    ['Suitcase hold / side',2,'30–45 sec',45,3,['Core','Obliques']]
  ]}
+};
+
+
+const exerciseDescriptions={
+"DB goblet squat — comfortable depth":"Hold one dumbbell at your chest. Sit down and back to a comfortable depth, keeping your knees tracking comfortably over your feet, then stand tall.",
+"DB Romanian deadlift":"Hold dumbbells by your thighs. Hinge your hips back with a soft knee bend, keep your back neutral, lower until you feel your hamstrings load, then drive your hips forward.",
+"DB bench press":"Lie on the bench with dumbbells over your chest. Lower with control toward your chest, then press back up without letting your shoulders shrug.",
+"1-arm DB row, bench-supported / side":"Support yourself on the bench. Pull the dumbbell toward your hip while keeping your torso stable, then lower with control.",
+"DB hip thrust on bench":"Rest your upper back on the bench and keep your feet planted. Drive through your feet to lift your hips, squeeze your glutes at the top, then lower.",
+"DB lateral raise":"With light dumbbells at your sides, raise your arms out to about shoulder height with a soft elbow bend, then lower slowly.",
+"Dead bug / side":"Lie on your back with arms up and knees bent. Brace your core and slowly extend the opposite arm and leg without letting your lower back arch.",
+"Low step-up / side*":"Step onto a low, stable step and drive through the working foot to stand. Lower slowly and stay controlled. If this bothers your knee, use a pain-free squat variation.",
+"Seated DB shoulder press":"Sit tall with dumbbells at shoulder height. Press overhead while keeping your ribs controlled, then lower slowly.",
+"Chest-supported DB row":"Lie chest-down on an inclined bench with dumbbells hanging down. Pull toward your ribs or hips while keeping your chest supported, then lower slowly.",
+"DB glute bridge":"Lie on your back with feet planted and the dumbbell resting securely over your hips. Lift your hips by squeezing your glutes, pause briefly, then lower.",
+"DB biceps curl":"Keep your elbows close to your sides. Curl the dumbbells toward your shoulders without swinging, then lower slowly.",
+"Side plank / side":"Support yourself on one forearm and the side of your foot or knees. Keep your body in a straight line and brace your core.",
+"DB squat — comfortable depth":"Hold dumbbells securely and squat to a comfortable, pain-free depth. Keep your torso controlled and knees tracking comfortably over your feet.",
+"Single-leg DB RDL / side":"Balance on one leg while hinging your hips back and reaching the other leg behind you. Keep your hips square and return to standing with control.",
+"Incline DB bench press":"Lie on an inclined bench with dumbbells over your chest. Lower with control, then press up while keeping your shoulders stable.",
+"DB pullover":"Lie on the bench holding one dumbbell over your chest. With slightly bent elbows, lower it behind your head only as far as comfortable, then bring it back over your chest.",
+"DB overhead triceps extension":"Hold one dumbbell overhead with both hands. Bend your elbows to lower it behind your head, then extend your elbows to return it overhead.",
+"Suitcase hold / side":"Hold one dumbbell at your side while standing tall. Brace your core and resist leaning toward the weight. Switch sides."
 };
 
 const weekFocus={
@@ -127,13 +150,14 @@ function changeWeek(n){
   render();
 }
 
-function showInfo(title,text){
+function showInfo(title){
+  const text=exerciseDescriptions[title]||'Short exercise instructions are not available for this movement yet.';
   document.getElementById('infoTitle').textContent=title;
   document.getElementById('infoText').textContent=text;
   document.getElementById('infoModal').classList.add('show');
 }
 function closeInfo(){document.getElementById('infoModal').classList.remove('show');}
-function workoutView(){let w=workouts[data.day];return weekNavigation()+weeklyPlanView()+`<div class="card hero"><div class="row"><div><div class="tiny">Week ${data.week}</div><div class="workout-title">${w.name}</div></div><select id="daySelect" onchange="data.day=this.value;save();render()"><option value="A" ${data.day==='A'?'selected':''}>Monday • A</option><option value="B" ${data.day==='B'?'selected':''}>Wednesday • B</option><option value="C" ${data.day==='C'?'selected':''}>Friday • C</option></select></div><div style="margin-top:12px" class="small">PDF plan: 1–3 RIR • progress reps first, then load.</div></div>`+cardioView()+w.ex.map((e,i)=>{let last=lastFor(e[0]);return `<div class="card exercise"><h3>${e[0]}${e[6]?`<button class="info-btn" aria-label="Exercise information" onclick="showInfo(${JSON.stringify(e[0])},${JSON.stringify(e[6])})">i</button>`:''}</h3><div class="small">${e[1]} sets • ${e[2]} reps • ${e[3]}s rest • target ${e[4]} RIR</div>${last?`<div class="prev"><span class="arrow">↻</span><span>Last time: <b>${last.weight} lb</b> × ${last.reps} reps</span><span>• ${new Date(last.date).toLocaleDateString()}</span></div>`:'<div class="prev">No previous entry yet</div>'}<div class="fields"><label>Weight (lb)<input id="wt-${i}" inputmode="decimal" value="${last?.weight??''}"></label><label>Reps<input id="rp-${i}" inputmode="numeric" value="${last?.reps??''}"></label><label>RIR<input id="rir-${i}" inputmode="decimal" value="${last?.rir??e[4]}"></label></div><div class="row" style="margin-top:10px"><button class="primary" onclick="logSet(${i})">Log set</button><button class="secondary" onclick="startTimer(${e[3]})">${e[3]}s rest</button></div></div>`}).join('')+`<div class="card"><div class="row"><div><b>Finish workout</b><div class="small">Counts today toward your weekly and monthly statistics.</div></div><button class="primary" onclick="finishWorkout()">Finish</button></div></div>`}
+function workoutView(){let w=workouts[data.day];return weekNavigation()+weeklyPlanView()+`<div class="card hero"><div class="row"><div><div class="tiny">Week ${data.week}</div><div class="workout-title">${w.name}</div></div><select id="daySelect" onchange="data.day=this.value;save();render()"><option value="A" ${data.day==='A'?'selected':''}>Monday • A</option><option value="B" ${data.day==='B'?'selected':''}>Wednesday • B</option><option value="C" ${data.day==='C'?'selected':''}>Friday • C</option></select></div><div style="margin-top:12px" class="small">PDF plan: 1–3 RIR • progress reps first, then load.</div></div>`+cardioView()+w.ex.map((e,i)=>{let last=lastFor(e[0]);return `<div class="card exercise"><h3>${e[0]}${exerciseDescriptions[e[0]]?`<button class="info-btn" aria-label="Exercise information" onclick="showInfo(${JSON.stringify(e[0])})">i</button>`:''}</h3><div class="small">${e[1]} sets • ${e[2]} reps • ${e[3]}s rest • target ${e[4]} RIR</div>${last?`<div class="prev"><span class="arrow">↻</span><span>Last time: <b>${last.weight} lb</b> × ${last.reps} reps</span><span>• ${new Date(last.date).toLocaleDateString()}</span></div>`:'<div class="prev">No previous entry yet</div>'}<div class="fields"><label>Weight (lb)<input id="wt-${i}" inputmode="decimal" value="${last?.weight??''}"></label><label>Reps<input id="rp-${i}" inputmode="numeric" value="${last?.reps??''}"></label><label>RIR<input id="rir-${i}" inputmode="decimal" value="${last?.rir??e[4]}"></label></div><div class="row" style="margin-top:10px"><button class="primary" onclick="logSet(${i})">Log set</button><button class="secondary" onclick="startTimer(${e[3]})">${e[3]}s rest</button></div></div>`}).join('')+`<div class="card"><div class="row"><div><b>Finish workout</b><div class="small">Counts today toward your weekly and monthly statistics.</div></div><button class="primary" onclick="finishWorkout()">Finish</button></div></div>`}
 function logSet(i){let e=workouts[data.day].ex[i],weight=document.getElementById('wt-'+i).value,reps=document.getElementById('rp-'+i).value,rir=document.getElementById('rir-'+i).value;if(!reps){alert('Enter reps first.');return}data.logs.push({date:new Date().toISOString(),week:data.week,day:data.day,exercise:e[0],weight,reps:Number(reps),rir:Number(rir),sets:1,muscles:e[5]});save();render();startTimer(e[3])}
 function finishWorkout(){data.logs.push({date:new Date().toISOString(),week:data.week,day:data.day,type:'workout'});save();alert('Workout saved!')}
 function scheduleAlarm(sec){try{if(!audioCtx)return;if(audioCtx.state==='suspended')audioCtx.resume();const start=audioCtx.currentTime+Math.max(0,sec-0.05);[880,660,880,660,880].forEach((f,i)=>{const o=audioCtx.createOscillator(),g=audioCtx.createGain(),t=start+i*.18;o.frequency.value=f;o.type='sine';g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.32,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.20);o.connect(g);g.connect(audioCtx.destination);o.start(t);o.stop(t+.22)});}catch(e){}}
